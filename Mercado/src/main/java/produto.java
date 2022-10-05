@@ -1,14 +1,14 @@
 public class produto {
     private String Nome;
-    private String Frabicante;
+    private String Fabricante;
     private double Preco;
 
     public void setNome(String nome) {
         this.Nome = nome;
     }
 
-    public void setFrabicante(String frabicante) {
-        this.Frabicante = frabicante;
+    public void setFabricante(String frabicante) {
+        this.Fabricante = frabicante;
     }
 
     public void setPreco(double preco) {
@@ -16,20 +16,26 @@ public class produto {
     }
 
     public String getNome() {
-        return Nome;
+        return this.Nome;
     }
 
-    public String getFrabicante() {
-        return Frabicante;
+    public String getFabricante() {
+        return this.Fabricante;
     }
 
     public double getPreco() {
-        return Preco;
+        return this.Preco;
     }
 
     public produto(String nome, String frabicante, double preco) {
         this.Nome = nome;
-        this.Frabicante = frabicante;
+        this.Fabricante = frabicante;
         this.Preco = preco;
+    }
+
+    @Override
+    public String toString() {
+        String novaString = "Nome: " + this.Nome + ", Fabricante: " + this.Fabricante + ", Preço: " + this.Preco;
+        return novaString;
     }
 }
