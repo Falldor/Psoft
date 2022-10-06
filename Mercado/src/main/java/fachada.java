@@ -2,23 +2,26 @@ import java.util.Date;
 
 public class fachada {
 
-    private  ProdutoController produtoService;
-    private  LoteController loteService;
+    private ProdutoService produtoService;
+    private LoteService loteService;
 
-    public void criarProduto(String produto, String fabricante, double preco){
-        this.produtoService.SaveProduto();
+    public fachada(){
+        this.produtoService = new ProdutoService();
+        this.loteService = new LoteService();
+    }
+
+    public void criarProduto(int ID, String produto, String fabricante, double preco){
+        this.produtoService.SaveProduto(ID,produto, fabricante, preco);
     }
     public void listaProdutos(){
-        System.out.println(this.produtoService.ListaProdutos());
+       this.produtoService.ListaProdutos();
     }
 
-    public void criaLotes(String nome, String fabricante, double preco, int quantidade, Date data){
-        this.loteService.SaveLote(nome,fabricante,preco,quantidade,data);
+    public void criarLote(int ID, String nomeP, String fabricante, double precoP, int quantidade){
+        this.loteService.SaveLote(ID, nomeP,fabricante,precoP,quantidade);
     }
 
-    public void lisaLote(){
-        System.out.println(this.loteService.ListaLote());
+    public void listaLotes(){
+        this.loteService.ListaLotes();
     }
-
-
 }

@@ -34,4 +34,11 @@ public class lote {
     public void setProd(produto prod) {
         Prod = prod;
     }
+
+    @Override
+    public String toString() {
+        return"Quant: " + Quant +
+                ", Validade: " + Validade +
+                ", Prod: " + Prod;
+    }
 }
